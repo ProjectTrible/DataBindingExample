@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <!--<import type="java.util.List"/>-->
+        <!--Veraible name Model class name should be equal-->
+        <variable
+            name="dellpers"
+            type="com.example.yugandhar_pc.databindingexample.Dellpers" />
+
+        <variable
+            name="view"
+            type="android.view.View" />
+        <!--BaseObservable Example-->
+        <variable
+            name="checkbaseobservable"
+            type="com.example.yugandhar_pc.databindingexample.CheckBaseObservable" />
+        <!--Collections-->
+        <!-- <variable name="list" type="List&lt;String&gt;"/>
+         <variable name="index" type="int"/>-->
+        <import type="android.view.View" />
+
+    </data>
+
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+        <!--
+        set Title from model class
+        onclick handled from model class
+        -->
+        <TextView
+            android:id="@+id/tvhell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{dellpers.clickListenerCheck()}"
+            android:text="@{dellpers.title}"
+            android:textColor="@color/colorAccent"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--
+        here we can only get properties not the java class methods
+        ??
+         null coalescing operator (??) chooses the left operand if it isn't null or the right if the former is null.
+        -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{dellpers.excerpt ?? dellpers.title}" />
+        <!--Collections-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{dellpers.check.get(0)}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{dellpers::methodReference}"
+            android:text="method reference" />
+        <!--
+        Type Casting
+        -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(dellpers.age)}" />
+        <!--
+        Import Example
+        View.VISIBLE is import example and ?: is used for making view visible and invisible
+        -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="check"
+            android:visibility="@{dellpers.highlight? View.VISIBLE:View.INVISIBLE}" />
+        <!--
+        BaseObservable example
+        id is not accepting _,1,any special characters
+        -->
+        <TextView
+            android:id="@+id/observable_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvlistCheck"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ProgressBar
+            android:id="@+id/pbcheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+    </LinearLayout>
+</layout>
