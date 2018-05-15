@@ -15,6 +15,7 @@ public class ObservablesExample extends AppCompatActivity {
         ActivityObservablesExampleBinding binding = DataBindingUtil.setContentView(this, R.layout
                 .activity_observables_example);
 
+
         
     }
 }
