@@ -4,17 +4,19 @@ import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 
 public class CheckBaseObservable extends BaseObservable {
-    private String firstName;
+    public String firstNameCHeck;
     private String lastName;
 
     @Bindable
-    public String getFirstName() {
-        return firstName;
+    public String getFirstNameCHeck() {
+        return firstNameCHeck;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-        notifyPropertyChanged(BR.firstName);
+    public void setFirstNameCHeck(String firstNameCHeck) {
+        this.firstNameCHeck = firstNameCHeck;
+        notifyChange();
+        notifyPropertyChanged(BR.firstNameCHeck);
+
 }
 
     @Bindable
@@ -24,6 +26,7 @@ public class CheckBaseObservable extends BaseObservable {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+        notifyChange();
         notifyPropertyChanged(BR.lastName);
     }
 }

@@ -41,8 +41,5 @@ public class RecyclerCheckAdapter extends RecyclerView.Adapter<HeroViewHolder> {
     @Override
     public int getItemCount() {
         return beans.size();
-
     }
-
-
 }
