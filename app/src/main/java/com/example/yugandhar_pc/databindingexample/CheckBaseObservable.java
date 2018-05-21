@@ -6,6 +6,7 @@ import android.databinding.Bindable;
 public class CheckBaseObservable extends BaseObservable {
     public String firstNameCHeck;
     private String lastName;
+    private String Name;
 
     @Bindable
     public String getFirstNameCHeck() {
@@ -15,7 +16,8 @@ public class CheckBaseObservable extends BaseObservable {
     public void setFirstNameCHeck(String firstNameCHeck) {
         this.firstNameCHeck = firstNameCHeck;
         notifyChange();
-        notifyPropertyChanged(BR.firstNameCHeck);
+//        notifyPropertyChanged(BR.firstNameCHeck);
+        notifyPropertyChanged(R.id.observable_check_two);
 
 }
 

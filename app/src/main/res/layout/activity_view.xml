@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.yugandhar_pc.databindingexample.viewmodel.LoginViewModel" />
+
+        <variable
+            name="user"
+            type="com.example.yugandhar_pc.databindingexample.model.User" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.constraint.Guideline
+            android:id="@+id/gl_left"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/gl_right"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="20dp" />
+
+        <EditText
+            android:id="@+id/et_email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            app:addTextChangedListener="@{viewModel.getEmailTextWatcher}"
+            app:layout_constraintLeft_toLeftOf="@id/gl_left"
+            app:layout_constraintRight_toRightOf="@id/gl_right" />
+
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            app:addTextChangedListener="@{viewModel.getPasswordTextWatcher}"
+            app:layout_constraintLeft_toLeftOf="@id/gl_left"
+            app:layout_constraintRight_toRightOf="@id/gl_right"
+            app:layout_constraintTop_toBottomOf="@id/et_email" />
+
+        <Button
+            android:id="@+id/bt_login"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="@{viewModel::checkLoginDetails}"
+            android:text="Login"
+            app:layout_constraintLeft_toLeftOf="@id/gl_left"
+            app:layout_constraintRight_toRightOf="@id/gl_right"
+            app:layout_constraintTop_toBottomOf="@id/et_password" />
+
+        <TextView
+            android:id="@+id/tv_check_observable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.firstName}"
+            app:layout_constraintLeft_toLeftOf="@id/gl_left"
+            app:layout_constraintRight_toRightOf="@id/gl_right"
+            app:layout_constraintTop_toBottomOf="@id/bt_login" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

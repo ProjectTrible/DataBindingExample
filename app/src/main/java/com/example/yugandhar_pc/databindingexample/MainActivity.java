@@ -60,9 +60,10 @@ public class MainActivity extends AppCompatActivity {
                 activityBinding.observableCheck.setText(checkBaseObservable.getFirstNameCHeck());
                 checkBaseObservable.setFirstNameCHeck("First");
 //we have to use the get method and assign the text to view then only it is changin
-//                activityBinding.observableCheckTwo.setText(checkBaseObservable.getFirstNameCHeck());
+                activityBinding.observableCheckTwo.setText(checkBaseObservable.getFirstNameCHeck());
                 Log.e(TAG, "run: " + checkBaseObservable.getFirstNameCHeck()
-                        +"\n text "+activityBinding.observableCheckTwo.getText().length());
+                        + "\n text " + activityBinding.observableCheckTwo.getText().length());
+
             }
         }, 2000);
         /*final CheckBaseObservable checkBaseObservableone = new CheckBaseObservable();
