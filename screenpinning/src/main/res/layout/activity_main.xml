@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+               <!--<data>
+
+                   <variable
+                       name="handler"
+                       type="com.example.screenpinning.EventHandlers" />
+               </data>-->
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.constraint.Guideline
+            android:id="@+id/gl_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/gl_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="20dp" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/gl_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="20dp" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/gl_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="20dp" />
+
+        <Button
+            android:id="@+id/bt_main_pinning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{@string/pinning}"
+            app:layout_constraintLeft_toLeftOf="@id/gl_left"
+            app:layout_constraintRight_toLeftOf="@id/gl_right"
+            android:onClick="onClick"
+            />
+
+        <Button
+            android:id="@+id/bt_main_un_pinning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{@string/un_pinning}"
+            android:onClick="onClick"
+            app:layout_constraintLeft_toLeftOf="@id/gl_left"
+            app:layout_constraintRight_toLeftOf="@id/gl_right"
+            app:layout_constraintTop_toBottomOf="@id/bt_main_pinning" />
+
+        <!--
+                <Button
+                    android:id="@+id/bt_main_un_pinning"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/un_pinning}"
+                    app:layout_constraintLeft_toRightOf="@id/gl_left"
+                    app:layout_constraintRight_toLeftOf="@id/gl_right"
+
+                    tools:layout_editor_absoluteY="16dp" />
+        -->
+
+        <android.support.v7.widget.SwitchCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

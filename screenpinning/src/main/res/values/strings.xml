@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ScreenPinning</string>
+    <string name="pinning">Pinning</string>
+    <string name="un_pinning">UnPinning</string>
+</resources>
