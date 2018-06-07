@@ -46,6 +46,7 @@
             android:layout_height="wrap_content"
             android:hint="Password"
             app:addTextChangedListener="@{viewModel.getPasswordTextWatcher}"
+            android:inputType="textPassword"
             app:layout_constraintLeft_toLeftOf="@id/gl_left"
             app:layout_constraintRight_toRightOf="@id/gl_right"
             app:layout_constraintTop_toBottomOf="@id/et_email" />

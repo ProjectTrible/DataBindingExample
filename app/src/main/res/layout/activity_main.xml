@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <data>
+    <data >
         <!--<import type="java.util.List"/>-->
         <!--Veraible name Model class name should be equal-->
+
         <variable
             name="dellpers"
             type="com.example.yugandhar_pc.databindingexample.Dellpers" />
@@ -95,7 +96,7 @@
             android:id="@+id/observable_check_two"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{checkbaseobservable.firstNameCHeck}"
+            android:text="@={checkbaseobservable.firstNameCHeck}"
             />
 
         <android.support.v7.widget.RecyclerView

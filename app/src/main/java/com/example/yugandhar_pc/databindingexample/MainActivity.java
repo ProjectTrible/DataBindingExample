@@ -17,12 +17,15 @@ public class MainActivity extends AppCompatActivity {
 
     private String TAG = MainActivity.class.getSimpleName();
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        ActivitymainBinding Layout File Name
         final ActivityMainBinding activityBinding = DataBindingUtil
                 .setContentView(this, R.layout.activity_main);
+
         List<String> hello = new ArrayList<>();
         hello.add("a");
         hello.add("c");
@@ -58,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 activityBinding.pbcheck.setVisibility(View.INVISIBLE);
                 checkBaseObservable.setFirstNameCHeck("Secound Name");
                 activityBinding.observableCheck.setText(checkBaseObservable.getFirstNameCHeck());
-                checkBaseObservable.setFirstNameCHeck("First");
+                checkBaseObservable.setFirstNameCHeck("Hello lsdjf");
 //we have to use the get method and assign the text to view then only it is changin
                 activityBinding.observableCheckTwo.setText(checkBaseObservable.getFirstNameCHeck());
                 Log.e(TAG, "run: " + checkBaseObservable.getFirstNameCHeck()
